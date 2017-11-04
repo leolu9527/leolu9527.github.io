@@ -111,17 +111,20 @@
 
 
 
-<meta name="description" content="安装 pandoc 安装 MacTeX 安装 添加路径进path  123sudo vi /etc/paths# /Library/TeX/texbin ##常用命令 注意事项，中文显示需要在命令中指定字体（CJKmainfont），使用字体的PostScript 名称 在mac 字体册 应用中查看  markdown生成pdf  1$:pandoc test.md --latex-engine=">
+<meta name="description" content="系统：macOs Sierra 10.12.6  安装 pandoc 安装 MacTeX 安装  得到xelatex路径：/Library/TeX/texbin/xelatex 常用命令 markdown、html生成pdf  12//test.md为你需要转换的markdown或html文件$:pandoc test.md --latex-engine=/Library/TeX/texbin/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用pandoc将markdown转换到pdf">
 <meta property="og:url" content="http://laitan.me/2017/11/03/使用pandoc将markdown转换到pdf/index.html">
 <meta property="og:site_name" content="BIGFOX&#39;s BLOG">
-<meta property="og:description" content="安装 pandoc 安装 MacTeX 安装 添加路径进path  123sudo vi /etc/paths# /Library/TeX/texbin ##常用命令 注意事项，中文显示需要在命令中指定字体（CJKmainfont），使用字体的PostScript 名称 在mac 字体册 应用中查看  markdown生成pdf  1$:pandoc test.md --latex-engine=">
+<meta property="og:description" content="系统：macOs Sierra 10.12.6  安装 pandoc 安装 MacTeX 安装  得到xelatex路径：/Library/TeX/texbin/xelatex 常用命令 markdown、html生成pdf  12//test.md为你需要转换的markdown或html文件$:pandoc test.md --latex-engine=/Library/TeX/texbin/">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-04T02:29:10.000Z">
+<meta property="og:image" content="http://laitan.me/images/QQ20171104-194752@2x.png">
+<meta property="og:image" content="http://laitan.me/images/QQ20171104-200604@2x.png">
+<meta property="og:updated_time" content="2017-11-04T12:11:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用pandoc将markdown转换到pdf">
-<meta name="twitter:description" content="安装 pandoc 安装 MacTeX 安装 添加路径进path  123sudo vi /etc/paths# /Library/TeX/texbin ##常用命令 注意事项，中文显示需要在命令中指定字体（CJKmainfont），使用字体的PostScript 名称 在mac 字体册 应用中查看  markdown生成pdf  1$:pandoc test.md --latex-engine=">
+<meta name="twitter:description" content="系统：macOs Sierra 10.12.6  安装 pandoc 安装 MacTeX 安装  得到xelatex路径：/Library/TeX/texbin/xelatex 常用命令 markdown、html生成pdf  12//test.md为你需要转换的markdown或html文件$:pandoc test.md --latex-engine=/Library/TeX/texbin/">
+<meta name="twitter:image" content="http://laitan.me/images/QQ20171104-194752@2x.png">
 
 
 
@@ -372,27 +375,34 @@
       
 
       
-        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
-<li>pandoc 安装</li>
-<li>MacTeX 安装</li>
-<li>添加路径进path</li>
+        <ul>
+<li>系统：macOs Sierra 10.12.6</li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
+<li><a href="http://pandoc.org/installing.html" target="_blank" rel="external">pandoc</a> 安装</li>
+<li><a href="http://tug.org/mactex/mactex-download.html" target="_blank" rel="external">MacTeX</a> 安装</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/paths</div><div class="line"></div><div class="line"># /Library/TeX/texbin</div></pre></td></tr></table></figure>
-<p>##常用命令</p>
-<p>注意事项，中文显示需要在命令中指定字体（CJKmainfont），使用字体的PostScript 名称</p>
-<p>在mac 字体册 应用中查看</p>
-<ol>
-<li>markdown生成pdf</li>
+<p>得到xelatex路径：<br><code>/Library/TeX/texbin/xelatex</code></p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ol>
+<li>markdown、html生成pdf</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$:pandoc test.md --latex-engine=/Library/TeX/texbin/xelatex -V CJKmainfont=&apos;STHeitiSC-Light&apos;  -o example13.pdf</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//test.md为你需要转换的markdown或html文件</div><div class="line">$:pandoc test.md --latex-engine=/Library/TeX/texbin/xelatex -V CJKmainfont=&apos;STHeitiSC-Light&apos;  -o example13.pdf</div></pre></td></tr></table></figure>
 <ol>
 <li><p>md-&gt;html</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$pandoc -f markdown -t html -o demo.html demo.md</div></pre></td></tr></table></figure>
 </li>
-<li><p>生成带书签(–toc)的PDF  一般都使用这个生成pdf</p>
+<li><p>章节标题生成超文本书签(–toc)（带书签PDF）</p>
 </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">pandoc -N -s --toc --smart --latex-engine=/Library/TeX/texbin/xelatex -V CJKmainfont=&apos;PingFang SC&apos; -V mainfont=&apos;Monaco&apos; -V geometry:margin=1in test.md  -o output.pdf</div><div class="line"></div><div class="line">#参考https://www.zhihu.com/question/20849824</div><div class="line">#参考https://www.zhihu.com/question/22906637/answer/32816910</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ pandoc -N -s --toc --smart --latex-engine=/Library/TeX/texbin/xelatex -V CJKmainfont=&apos;PingFang SC&apos; -V mainfont=&apos;Monaco&apos; -V geometry:margin=1in test.md  -o output.pdf</div><div class="line"></div><div class="line">//**注意事项，中文显示需要在命令中指定字体（CJKmainfont），使用字体的PostScript 名称**</div></pre></td></tr></table></figure>
+<p><strong>PostScript查看方式:在mac 字体册 应用中查看,如下图：</strong></p>
+<p><img src="/images/QQ20171104-194752@2x.png" alt=""></p>
+<p>生成的pdf预览：</p>
+<p><img src="/images/QQ20171104-200604@2x.png" alt=""></p>
+<blockquote>
+<p>参考<a href="https://www.zhihu.com/question/20849824" target="_blank" rel="external">https://www.zhihu.com/question/20849824</a><br>参考<a href="https://www.zhihu.com/question/22906637/answer/32816910" target="_blank" rel="external">https://www.zhihu.com/question/22906637/answer/32816910</a></p>
+</blockquote>
+<p><a href="http://www.jianshu.com/p/99c6e5e287a1" target="_blank" rel="external">在简书看</a></p>
 
       
     </div>
@@ -562,7 +572,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令"><span class="nav-number">2.</span> <span class="nav-text">常用命令</span></a></li></ol></div>
             
 
           </div>
